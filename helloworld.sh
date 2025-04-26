@@ -1,0 +1,1 @@
+hello all, am practicing shell scripting
