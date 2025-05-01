@@ -8,8 +8,8 @@ VALIDATE(){
     echo "installation of $2 failed"
     else
     echo " installation of $2 is success"
-fi}
-
+fi
+}
 if [ $ID -ne 0 ]
     then
     echo "you are not root user"
