@@ -9,6 +9,8 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
+LOGFILE="/tmp/$2-$TIMESTAMP.log"
+
 VALIDATE(){
     if [ $1 -ne 0 ]
     then
@@ -29,7 +31,7 @@ echo -e "$Y all arguments passed are : $@ $N"
 
 for package in $@
 do
-    yum list installed $package
+    yum list installed $package &>> $LOGFILE
     if [ $? -ne 0 ]
     then
         yum install $package -y
