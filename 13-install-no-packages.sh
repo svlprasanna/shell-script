@@ -2,7 +2,7 @@
 
 ID=$(id -u)
 TIMESTAMP=$(date +%F-%H-%M-%S)
-echo -e "$Y script started running at $TIMESTAMP $N"
+echo -e "$Y script started running at $TIMESTAMP $N" &>> $LOGFILE
 
 R="\e[31m"
 G="\e[32m"
@@ -18,7 +18,8 @@ VALIDATE(){
     else
     echo -e "installation of $G $2 is success $N"
 fi
-}
+} &>> $LOGFILE
+
 if [ $ID -ne 0 ]
     then
     echo -e "$R you are not root user $N"
@@ -35,8 +36,8 @@ do
     if [ $? -ne 0 ]
     then
         yum install $package -y
-        VALIDATE $? "installing $package"
+        VALIDATE $? "installing $package" &>> $LOGFILE
         else
-        echo -e "$G $package is already installed $N"
+        echo -e "$G $package is already installed $N" &>> $LOGFILE
     fi
 done
