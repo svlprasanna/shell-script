@@ -17,7 +17,7 @@ then
 echo "ERROR : installing mysql is failed"
 exit 1
 else
-echo "installing mysql is success"
+echo "installing mysql is success..."
 fi
 
 yum install git -y
@@ -27,5 +27,5 @@ then
 echo "ERROR : installing git is failed"
 exit 1
 else
-echo "installing git is success"
+echo "installing git is success..."
 fi
