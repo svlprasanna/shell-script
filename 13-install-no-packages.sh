@@ -27,4 +27,7 @@ do
     then
         yum install $package -y
         VALIDATE $? "installing $package"
+        else
+        echo "$package is already installed"
+    fi
 done
