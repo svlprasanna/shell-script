@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ID=$(id -u)
-TIMESTAMP=$(+%F-%H-%M-%S)
+TIMESTAMP=$(date +%F-%H-%M-%S)
 echo -e "$Y script started running at $TIMESTAMP $N"
 
 R="\e[31m"
