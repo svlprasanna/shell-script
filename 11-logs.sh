@@ -4,28 +4,33 @@ ID=$(id -u)
 TIMESTAMP=$(date +%F-%H-%M-%S)
 LOGFILE="/tmp/$0-$TIMESTAMP.log"
 
-echo "script name is : $0"
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+N="\e[0m"
+
+echo "script name is :$R $0"
 
 VALIDATE(){
     if [ $1 -ne 0 ]
     then
-    echo "ERROR : installing $2 is failed"
+    echo "$R ERROR : installing $2 is failed"
     exit 1
     else
-    echo "installing $2 is success..."
+    echo "$G installing $2 is success..."
     fi
 }
 
 if [ $ID -ne 0 ]
 then
-echo "error:please run with root access"
+echo -e "$R error:please run with root access"
 exit 1
 else
-echo "you are root user"
+echo "$G you are root user"
 fi
 
 yum install mysql -y &>> $LOGFILE
-VALIDATE $? "Installing mysql"
+VALIDATE $? "$G Installing mysql"
 
 yum install git -y &>> $LOGFILE
-VALIDATE $? "installing git"
+VALIDATE $? "$Y installing git"
