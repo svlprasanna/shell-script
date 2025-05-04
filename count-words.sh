@@ -9,8 +9,8 @@ else
 echo "file exist in the system"
 fi
 
-while IFS= read -s line
+while IFS= read -r file
 do
 count=$(cat $FILE | wc -w " ")
 echo "words in the file are: $count"
-done <<<FILE
+done < $FILE
