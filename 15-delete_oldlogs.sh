@@ -13,4 +13,5 @@ files_to_delete=$(find $SOURCE_FILE -type f -mtime +14 -name *.log)
 while IFS= read -r line
 do
     echo "deleting old log files $line"
+    rm -rf $line
 done <<< $files_to_delete
