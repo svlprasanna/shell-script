@@ -15,4 +15,4 @@ do
 echo "username: $username"
 echo "user ID: $user_id"
 echo "password: $password"
-done
+done < $SOURCE_FILE
