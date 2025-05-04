@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SOURCE_FILE=/etc/passwd
+SOURCE_FILE= /etc/passwd
 
 if [ ! -d $SOURCE_FILE ]
 then
