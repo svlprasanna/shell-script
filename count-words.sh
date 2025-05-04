@@ -9,6 +9,9 @@ else
 echo "file exist in the system"
 fi
 
-word_count= $( tr -s $FILE)
+word_count= $( tr -d $FILE)
 
-echo "words in the file are $word_count"
+while( read -s word)
+do
+echo "words in the file are $word"
+done
