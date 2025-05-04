@@ -12,5 +12,5 @@ fi
 while IFS= read -s word
 do
 count=$(cat $FILE | wc -w " ")
-echo "words in the file are: $count")
+echo "words in the file are: $count"
 done <<<FILE
