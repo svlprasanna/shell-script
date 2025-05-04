@@ -1,8 +1,8 @@
 #!/bin/bash
 
-SOURCE_FILE= /etc/passwd
+SOURCE_FILE=/etc/passwd
 
-if [ ! -d $SOURCE_FILE ]
+if [ ! -f $SOURCE_FILE ]
 then
 echo -e "source file doesn't exist"
 exit 1
