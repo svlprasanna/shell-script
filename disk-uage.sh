@@ -10,8 +10,8 @@ partition=$(echo $lline | awk '{print $1F}')
 if [ $usage -gt $partition ]
 then
     message+="disk usage on $partition is: $usage"
-    fi
-done <<<$DISK_USAGE
+fi
+done <<< $DISK_USAGE
 
 echo "MESSAGE:$message"
 
