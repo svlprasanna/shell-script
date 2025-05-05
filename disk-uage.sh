@@ -11,7 +11,7 @@ if [ $usage -gt $partition ]
 then
     message+="disk usage on $partition is: $usage"
     fi
-done <<< $DISK_USAGE
+done <<<$DISK_USAGE
 
 echo "MESSAGE:$message"
 
