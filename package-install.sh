@@ -10,9 +10,11 @@ echo -e "you are root user now"
 fi
 
 VALIDATE(){
-    echo -e "$1 installation failed"
+    if [ $1 -ne 0 ]
+    echo -e "$2 failed"
     else
-    echo -e "$1 installation success"
+    echo -e "$2 success"
+    fi
 }
 
 echo -e "please enter packages to be installed are: $@"
